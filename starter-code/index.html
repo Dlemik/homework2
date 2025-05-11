@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Space Tourism</title>
+</head>
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+  color: white;
+  background: url('background-home-desktop.jpg') no-repeat center center/cover;
+  height: 100vh;
+}
+
+.main-header {
+  padding: 2rem 4rem;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem 3rem;
+  border-radius: 5px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100vh;
+  padding: 10rem 8rem;
+}
+
+.home-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.text-content {
+  max-width: 500px;
+}
+
+.text-content h5 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #d0d6f9;
+}
+
+.text-content h1 {
+  font-size: 8rem;
+  font-family: 'Bellefair', serif;
+  margin: 1rem 0;
+  text-transform: uppercase;
+}
+
+.text-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #d0d6f9;
+}
+
+.explore-btn {
+  align-self: flex-end;
+}
+
+.explore-btn a {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  color: #0b0d17;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 200px;
+  font-size: 1.5rem;
+  font-family: 'Bellefair', serif;
+  text-decoration: none;
+}
+
+.explore-btn a:hover {
+  box-shadow: 0 0 0 40px rgba(255, 255, 255, 0.1);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .home {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    text-align: start;
+    padding: 50px;
+    margin-top: 120px;
+    height: 100vh;
+  }
+
+  .home-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .explore-btn {
+    align-self: end;
+  }
+}
+
+</style>
+<body>
+  <header class="main-header">
+    <nav class="navbar">
+      <div class="logo"><img src="logo.svg" alt=""></div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links">
+        <li><a href="#">00 Home</a></li>
+        <li><a href="destination-moon.html">01 Destination</a></li>
+        <li><a href="crew-commander.html">02 Crew</a></li>
+        <li><a href="technology-vehicle.html">03 Technology</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="home">
+    <section class="home-content">
+      <div class="text-content">
+        <h5>So, you want to travel to</h5>
+        <h1>Space</h1>
+        <p>
+          Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not
+          hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!
+        </p>
+      </div>
+      <div class="explore-btn">
+        <a href="#">EXPLORE</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector(".nav-links").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>

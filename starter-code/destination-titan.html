@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Space tourism website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Barlow Condensed', sans-serif;
+      background: url('background-destination-desktop.jpg') no-repeat center center/cover;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem 3rem;
+      border-radius: 5px;
+      font-family: 'Bellefair', serif;
+      letter-spacing: 2px;
+    }
+
+    nav li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+
+    nav li.active a {
+      border-bottom: 2px solid white;
+    }
+
+    main.destination {
+      padding: 4rem;
+    }
+
+    .destination-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5rem;
+    }
+
+    .planet-image {
+      width: 300px;
+      height: auto;
+    }
+
+    .destination-text {
+      max-width: 600px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .tabs li a {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      padding-bottom: 4px;
+    }
+
+    .tabs .active a {
+      border-bottom: 2px solid white;
+    }
+
+    .destination-text h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .destination-text p {
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .stats {
+      display: flex;
+      gap: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 1rem;
+    }
+
+    .stats h3 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.5rem;
+      color: #d0d6f9;
+    }
+
+    .stats p {
+      font-size: 1.5rem;
+    }
+
+    .burger {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 1.5rem;
+      position: absolute;
+      top: 100%;
+      right: 2rem;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 2rem;
+      border-radius: 10px;
+      z-index: 999;
+    }
+
+    .mobile-menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    @media screen and (max-width: 768px) {
+      body {
+        background: url('background-destination-mobile.jpg') no-repeat center center/cover;
+        text-align: center;
+        padding: 0 1.5rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .burger {
+        display: block;
+        margin-left: 200px;
+      }
+
+      .destination {
+        padding: 2rem 0;
+      }
+
+      .destination-content {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .planet-image {
+        width: 170px;
+        height: auto;
+      }
+
+      .tabs {
+        justify-content: center;
+        gap: 1.5rem;
+        padding-bottom: 1rem;
+      }
+
+      .destination-text h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .destination-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+      }
+
+      .stats {
+        flex-direction: row;
+        gap: 2rem;
+        align-items: center;
+        padding-top: 2rem;
+      }
+    }
+  </style>
+<body>
+</head>
+<header>
+  <div class="logo">
+    <img src="logo.svg" alt="logo" />
+  </div>
+  <button class="burger" onclick="toggleMenu()">☰</button>
+  <nav>
+    <ul>
+      <li><a href="index.html">00 Home</a></li>
+      <li class="active"><a href="destination-moon.html">01 Destination</a></li>
+      <li><a href="crew-commander.html">02 Crew</a></li>
+      <li><a href="technology-vehicle.html">03 Technology</a></li>
+    </ul>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">00 Home</a>
+    <a href="destination-moon.html">01 Destination</a>
+    <a href="crew-commander.html">02 Crew</a>
+    <a href="technology-vehicle.html">03 Technology</a>
+  </div>
+</header>
+
+
+<main class="destination">
+  <h2><span>01</span> Pick your destination</h2>
+  <div class="destination-content">
+    <img src="image-titan.png" alt="Titan" class="planet-image" />
+    <div class="destination-text">
+      <ul class="tabs">
+        <li><a href="destination-moon.html">Moon</a></li>
+        <li><a href="destination-mars.html">Mars</a></li>
+        <li><a href="destination-europa.html">Europa</a></li>
+        <li class="active"><a href="destination-titan.html">Titan</a></li>
+      </ul>
+      <h1>Titan</h1>
+      <p>
+        The only moon known to have a dense atmosphere other than Earth, Titan is a home away from
+        home (just a few hundred degrees colder!). As a bonus, you get to fly in a methane sea.
+      </p>
+      <div class="stats">
+        <div>
+          <h3>Avg. Distance</h3>
+          <p>1.6 bil. km</p>
+        </div>
+        <div>
+          <h3>Est. Travel Time</h3>
+          <p>7 years</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+  }
+</script>
+</body>
+</html>

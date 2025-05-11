@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
+  <title>Space Tourism — Technology</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Barlow Condensed', sans-serif;
+      background: url('background-technology-desktop.jpg') no-repeat center center/cover;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem 3rem;
+      border-radius: 5px;
+      font-family: 'Bellefair', serif;
+      letter-spacing: 2px;
+    }
+
+    nav li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+
+    nav li.active a {
+      border-bottom: 2px solid white;
+    }
+
+    main.technology {
+      padding: 4rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .tech-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .tech-tabs {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .tech-tab {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      background-color: transparent;
+      color: white;
+      text-decoration: none;
+    }
+
+    .tech-tab.active {
+      background-color: white;
+      color: black;
+    }
+
+    .tech-text {
+      max-width: 600px;
+    }
+
+    .tech-subheading {
+      font-size: 1rem;
+      text-transform: uppercase;
+      color: #d0d6f9;
+      margin-bottom: 0.5rem;
+    }
+
+    .tech-title {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .tech-desc {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .tech-image {
+      width: 400px;
+      height: auto;
+    }
+
+    .burger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 999;
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 100%;
+    right: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+
+  .mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+
+    @media (max-width: 768px) {
+      .tech-content {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+
+      .tech-image {
+        width: 100%;
+      }
+
+      .tech-tabs {
+        flex-direction: row;
+      }
+
+      header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 1rem 1.5rem;
+    }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .burger {
+        display: block;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .mobile-menu.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.svg" alt="logo" />
+    </div>
+    <button class="burger" onclick="toggleMenu()">☰</button>
+    <nav>
+      <ul>
+        <li><a href="index.html">00 Home</a></li>
+        <li><a href="destination-moon.html">01 Destination</a></li>
+        <li><a href="crew-commander.html">02 Crew</a></li>
+        <li class="active"><a href="technology-vehicle.html">03 Technology</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">00 Home</a>
+      <a href="destination-moon.html">01 Destination</a>
+      <a href="crew-commander.html">02 Crew</a>
+      <a href="technology-vehicle.html">03 Technology</a>
+    </div>
+  </header>
+
+  <main class="technology">
+    <h2><span>03</span> Space launch 101</h2>
+    <div class="tech-content">
+      <div class="tech-tabs">
+        <a href="technology-vehicle.html" class="tech-tab">1</a>
+        <a href="technology-spaceport.html" class="tech-tab">2</a>
+        <a href="technology-capsule.html" class="tech-tab active">3</a>
+      </div>
+      <div class="tech-text">
+        <p class="tech-subheading">The terminology...</p>
+        <h1 class="tech-title">Space capsule</h1>
+        <p class="tech-desc">
+          A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained.
+        </p>
+      </div>
+      <img src="image-space-capsule-portrait.jpg" alt="" class="tech-image" />
+    </div>
+  </main>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('show');
+    }
+  </script>  
+</body>
+</html>
